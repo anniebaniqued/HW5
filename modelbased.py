@@ -22,12 +22,21 @@ def get_target(score):
 
 # Define your first exploration/exploitation strategy here. Return 0 to exploit and 1 to explore. 
 # You may want to pass arguments from the modelbased function. 
+
+# This one is random purely with some probability - equivalent to epsilon-greedy, but epsilon doesn't decrease here
 def ex_strategy_one():
-  return 0
+  randomNum = throw.ranf()
+  if randomNum < 0.2:
+    return 0
+  else return 1
 
 # Define your first exploration/exploitation strategy here. Return 0 to exploit and 1 to explore. 
 # You may want to pass arguments from the modelbased function.
+
+# odd / even?
+# or based on score? - 
 def ex_strategy_two():
+
   return 1
 
 # Implement a model-based reinforcement learning algorithm. 

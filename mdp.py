@@ -36,8 +36,96 @@ def get_target(score):
 def T(a, s, s_prime):
   # takes an action a, current state s, and next state s_prime
   # returns the probability of transitioning to s_prime when taking action a in state s
+  aRing = a.ring
+  aWedge = a.wedge
+  target = s - s_prime
+
+  probs = [0.4, 0.2, 0.1]
+
+
+  probability = 0
+  for i in range (-2, 3):
+    w = (throw.wedges.index(a.wedge) + i) % len(throw.wedges)
+    wedge = throw.wedges(w)
+    for j in range(-2, 3):
+      ring = min(abs(aRing + j), 6)
+      loc = location(ring, wedge)
+      score = location_to_score(loc)
+      if target == score:
+        probability += probs[abs(i)] * probs[abs(j)]
+
+"""
+  possiblePoints = []
+
+
+  return probability
+      if i + aRing < 0:
+        # two cases, in the center, and outside
+
+        possiblePoints.append(throw.location_to_score(throw.location((aRing+i, (aWedge+j) % 5)))
+
+      else:
+        possiblePoints.append(throw.location_to_score(throw.location((aRing+i) % 5, (aWedge+j) % 5)))
+
+  try:
+    targetIndex = possiblePoints.index(target)
+  except ValueError:
+    return 0
+
+  probs = [0.4, 0.2, 0.1]
+  
+
+  ringIndex = targetIndex / 5 - 5
+  wedgeIndex = targetIndex % 5 - 5
+
+  return probs[abs(ringIndex)] * probs[abs(wedgeIndex)]  
+
+  for i in range (-2, 3):
+    for j in range(-2, 3):
+
+
+
+
+  allLocs = []
+
+
+  for i in range(-2, 3):
+    for 
+
+
+
+  wedgeDistDict = {0:0.4, 1:0.2, -1:0.2, -2:0.1, 2:0.1}
+  regionDistDict = {0:0.4, 1:0.2, -1:0.2, -2:0.1, 2:0.1}
+
+  if target == 50:
+    try:
+      return regionDistDict[aRing - 0]
+    except KeyError:
+  
+  if target == 25:
+    try: 
+      return regionDistDict[aRing - 1]
+    except KeyError:
+
+  wedgeProb = 0.4
+  for i in range(-2, 3):
+    return wedgeProb*
+
+
+
   return 0
 
+
+  possiblePoints = []
+
+  for i in range 
+
+  if wedge 
+  dartScore = throw.location_to_score(a)
+  if s - dartScore == s_prime:
+    return 0.4
+  elif s - 
+"""
 
 def infiniteValueIteration(gamma):
   # takes a discount factor gamma and convergence cutoff epislon

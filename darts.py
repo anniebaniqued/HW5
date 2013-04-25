@@ -16,12 +16,16 @@ EPOCH_SIZE = 10
 
 # <CODE HERE>: Complete this function, which should return a
 # list of all possible states.
+# States are total point values, so all possible states include any reachable point total
 def get_states():
-  # should return a **list** of states. Each state should be an integer.
-  return []
+    toReturn = []
+    for i in range (throw.START_SCORE):
+        toReturn.append(i)
+    return toReturn
 
 # Returns a list of all possible actions, or targets, which include both a
 # wedge number and a ring.
+# An action is a location: 
 def get_actions():
 
   actions = []
@@ -37,11 +41,23 @@ def get_actions():
   return actions
 
 # <CODE HERE>: Define the reward function
+# Penalize -1 for every throw, in order to try to minimize the total number of throws
 def R(s,a):
   # takes a state s and action a
   # returns the reward for completing action a in state s
-  return 0
+  # utility function
+  points = throw.location_to_score(a)
+  if points <= s:
+    return points
+  else
+    return 0
 
+"""
+  if s = 0:
+    return 100
+  else: 
+    return -1
+"""
 
 # Play a single game 
 def play(method):
