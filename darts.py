@@ -7,8 +7,8 @@ import time
 import random
 import throw
 import mdp
-import modelbased
-import modelfree
+# import modelbased
+# import modelfree
 
 GAMMA = .5
 EPOCH_SIZE = 10
@@ -19,7 +19,15 @@ EPOCH_SIZE = 10
 # States are total point values, so all possible states include any reachable point total
 def get_states():
     toReturn = []
+<<<<<<< HEAD
+<<<<<<< HEAD
+    for i in range (throw.START_SCORE+1):
+=======
     for i in range (throw.START_SCORE + 1):
+>>>>>>> a7343220d7bbacc7e26a9be9267664939c2dc759
+=======
+    for i in range (throw.START_SCORE + 1):
+>>>>>>> a7343220d7bbacc7e26a9be9267664939c2dc759
         toReturn.append(i)
     return toReturn
 
@@ -49,7 +57,7 @@ def R(s,a):
   points = throw.location_to_score(a)
   if points <= s:
     return points
-  else
+  else:
     return 0
 
 """
@@ -119,8 +127,8 @@ def main():
 #*************************************************
 
 # Default is to solve MDP and play 1 game
-    #throw.use_simple_thrower()
-    #test(1, "mdp")    
+    throw.use_simple_thrower()
+    test(1, "mdp")    
 
 #*************************************************#
 # Uncomment the lines below to run the modelbased #

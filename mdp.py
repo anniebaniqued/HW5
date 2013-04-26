@@ -42,17 +42,18 @@ def T(a, s, s_prime):
 
   probs = [0.4, 0.2, 0.1]
 
-
   probability = 0
   for i in range (-2, 3):
     w = (throw.wedges.index(a.wedge) + i) % len(throw.wedges)
-    wedge = throw.wedges(w)
+    wedge = throw.wedges[w]
     for j in range(-2, 3):
       ring = min(abs(aRing + j), 6)
-      loc = location(ring, wedge)
-      score = location_to_score(loc)
+      loc = throw.location(ring, wedge)
+      score = throw.location_to_score(loc)
       if target == score:
         probability += probs[abs(i)] * probs[abs(j)]
+
+  return probability
 
 """
   possiblePoints = []
@@ -166,6 +167,7 @@ def infiniteValueIteration(gamma):
 
       # given current state, store the action that maximizes V in pi and the corresponding value in V
       PI[s] = actions[0]
+      V[s] = Q[s][PI[s]]  
       for a in actions:
         if V[s] <= Q[s][a]:
           V[s] = Q[s][a]

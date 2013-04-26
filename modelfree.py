@@ -27,8 +27,18 @@ def get_target(score):
 def ex_strategy_one(randAction, maxAction):
   randomNum = throw.ranf()
   if randomNum < 0.2:
+<<<<<<< HEAD
+<<<<<<< HEAD
+    return 0
+  else: return 1
+=======
     return randAction
   else return maxAction
+>>>>>>> a7343220d7bbacc7e26a9be9267664939c2dc759
+=======
+    return randAction
+  else return maxAction
+>>>>>>> a7343220d7bbacc7e26a9be9267664939c2dc759
 
 
 # Exploration/exploitation strategy two.

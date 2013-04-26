@@ -28,7 +28,7 @@ def ex_strategy_one():
   randomNum = throw.ranf()
   if randomNum < 0.2:
     return 0
-  else return 1
+  return 1
 
 # Define your first exploration/exploitation strategy here. Return 0 to exploit and 1 to explore. 
 # You may want to pass arguments from the modelbased function.
