@@ -19,7 +19,7 @@ EPOCH_SIZE = 10
 # States are total point values, so all possible states include any reachable point total
 def get_states():
     toReturn = []
-    for i in range (throw.START_SCORE + 1):
+    for i in range (throw.START_SCORE):
         toReturn.append(i)
     return toReturn
 

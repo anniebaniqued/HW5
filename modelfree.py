@@ -27,15 +27,18 @@ def get_target(score):
 def ex_strategy_one(randAction, maxAction):
   randomNum = throw.ranf()
   if randomNum < 0.2:
-    return 0
-  else return 1
+    return randAction
+  else return maxAction
 
 
 # Exploration/exploitation strategy two.
 # BOLTZMANN
 def ex_strategy_two(numgames, gameNo, inQ, numActions):
   tau = numgames - gameNo
-  
+  probabilities = []
+  for actionI in range(numActions):
+  	Qvalue = inQ[]
+
   # only use top
   # 
 
